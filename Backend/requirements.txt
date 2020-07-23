@@ -1,0 +1,17 @@
+click
+dlib
+dnspython
+face-recognition
+face-recognition-models
+Flask
+Flask-Cors
+Flask-PyMongo
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
+numpy
+Pillow
+pymongo
+six
+Werkzeug

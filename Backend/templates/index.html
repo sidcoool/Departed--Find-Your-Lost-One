@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Child</title>
+</head>
+<body>
+    <h1>Please upload the photo of the missing child</h1>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="childImage">
+        <input type="submit">
+    </form>
+    {% if result %}
+        {% if result['ismatched'] == False %}
+            <p>Sorry!! No one has reported for your child yet</p>
+        {% else %}
+            <p>We have found your child</p>
+            <img src="{{result['path']}}">
+            <img src="{{result['imgpath']}}">
+        {% endif %}
+    {% endif %}
+</body>
+</html>
