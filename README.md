@@ -8,7 +8,13 @@ Web App (also PWA) that lets you find lost children and using Image Recognition
 [Go to the website >](https://lost-children.firebaseapp.com/)
 
 ## How it works
+![Screen](Screens/departed.gif)
 
+
+---
+
+#### It also send the founder details to parent/guarduian Email
+![Screen](Screens/departed-email.png)
 
 
 ## Contact
