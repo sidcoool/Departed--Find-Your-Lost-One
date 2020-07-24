@@ -13,7 +13,7 @@ Web App (also PWA) that lets you find lost children and using Image Recognition
 
 ---
 
-#### It also send the founder details to parent/guarduian Email
+#### It also sends the founder Details to Parent/Guardian Email
 ![Screen](Screens/departed-email.png)
 
 
