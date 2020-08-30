@@ -1,6 +1,9 @@
 #landing1 {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('../../assets/lost-child.jpg');
     height: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: white;
   }
 

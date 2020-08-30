@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpEventType } from '@angular/common/http';
+import { environment } from 'src/environments/environment'
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  total: number = 0
 
   ngOnInit() {
+    this.http.get<any>(environment.apiURL + "/findAll")
+    .subscribe(data => {
+      this.total = data.length
+      console.log(data)
+    })
   }
 
 }

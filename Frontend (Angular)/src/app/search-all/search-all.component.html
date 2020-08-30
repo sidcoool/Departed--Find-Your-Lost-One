@@ -1,1 +1,38 @@
-<p>search-all works!</p>
+<div class="container d-flex justify-content-around p-4">
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>City: {{selectedCity}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button (click)="filterChildren('all', -1)" ngbDropdownItem>All City</button>
+      <button (click)="filterChildren('delhi', -1)" ngbDropdownItem>Delhi</button>
+      <button (click)="filterChildren('agra', -1)" ngbDropdownItem>Agra</button>
+      <button (click)="filterChildren('noida', -1)" ngbDropdownItem>Noida</button>
+      <button (click)="filterChildren('kanpur',-1)" ngbDropdownItem>Kanpur</button>
+      <button (click)="filterChildren('jaipur', -1)" ngbDropdownItem>Jaipur</button>
+      <button (click)="filterChildren('gorakhpur', -1)" ngbDropdownItem>Gorakhpur</button>
+      <button (click)="filterChildren('mumbai', -1)" ngbDropdownItem>Mumbai</button>
+    </div>
+  </div>
+
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Age: {{selectedAge}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button (click)="filterChildren('x', 0)" ngbDropdownItem>All Age</button>
+      <button (click)="filterChildren('x', 5)" ngbDropdownItem>0-5</button>
+      <button (click)="filterChildren('x', 10)" ngbDropdownItem>5-10</button>
+      <button (click)="filterChildren('x', 15)" ngbDropdownItem>10-15</button>
+      <button (click)="filterChildren('x', 20)" ngbDropdownItem>15-20</button>
+      <button (click)="filterChildren('x', 25)" ngbDropdownItem>20-25</button>
+    </div>
+  </div>
+</div>
+
+<div class="container d-flex justify-content-center p-4" *ngFor="let child of filteredChildren">
+  <div class="card" style="width:400px">
+    <img class="card-img-top" [src]="child.imgURL" alt="Card image" style="width:100%; height: 250px;">
+    <div class="card-body">
+      <h4 class="card-title"><b>{{child.name}}</b></h4>
+      <pre class="card-text">Age: {{child.age}}    City: {{child.city}}</pre>
+      <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+    </div>
+  </div>
+</div>

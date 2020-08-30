@@ -18,22 +18,22 @@
             </div>
             <div class="form-group">
                 <label for="city">City:</label>
-                <input type="text" class="form-control" id="city" placeholder="Enter the City where the child was lost" [(ngModel)]="city" name="city"
-                    required>
+                <input type="text" class="form-control" id="city" placeholder="Enter the City where the child was lost"
+                    [(ngModel)]="city" name="city" required>
                 <!-- <div class="valid-feedback">Valid.</div> -->
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="form-group">
-                <label for="text">Guardian Name:</label>
-                <input type="text" class="form-control" id="gname" placeholder="Enter Guardian Name" [(ngModel)]="gname" name="gname"
-                    required>
+                <label for="gname">Guardian Name:</label>
+                <input type="text" class="form-control" id="gname" placeholder="Enter Guardian Name" [(ngModel)]="gname"
+                    name="gname" required>
                 <!-- <div class="valid-feedback">Valid.</div> -->
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
             <div class="form-group">
                 <label for="email">Guardian Email:</label>
-                <input type="text" class="form-control" id="email" placeholder="Enter Guardian Email" [(ngModel)]="email" name="email"
-                    required>
+                <input type="text" class="form-control" id="email" placeholder="Enter Guardian Email"
+                    [(ngModel)]="email" name="email" required>
                 <!-- <div class="valid-feedback">Valid.</div> -->
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
@@ -57,11 +57,47 @@
         <h3>{{ progress }}</h3>
     </div>
     <br>
-    <!-- <span class="p-4">
-        <h3 class="alert alert-primary">
-            <b>Result: {{ scResult }}</b>
-        </h3>
-    </span> -->
+
+
+
+    <div class="text-center p-4" *ngIf="!empty1">
+
+            <p *ngIf="empty2">
+                <b>{{ notFoundText }}</b>
+            </p>
+
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="card m-4" style="width:400px">
+                <img class="card-img-top" [src]="scResult.curChild.imgURL" alt="Card image"
+                    style="width:100%; height: 250px;">
+                <div class="card-body">
+                    <h4 class="card-title">{{scResult.curChild.name}}</h4>
+                    <p class="card-text">Lost Child Added</p>
+                    <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+                </div>
+            </div>
+
+            <br>
+
+            <div class="card m-4" style="width:400px" *ngIf="!empty2">
+                <img class="card-img-top" [src]="scResult.foundChild.imgURL" alt="Card image"
+                    style="width:100%; height: 250px;">
+                <div class="card-body">
+                    <h4 class="card-title"><b>{{scResult.foundChild.name}}</b></h4>
+                    <p class="card-text">We Found a Child !</p>
+                    <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="container d-flex justify-content-center p-4" *ngIf="searching">
+        <img src="../../assets/searching.gif" alt="">
+    </div>
+
 
 
 </div>
